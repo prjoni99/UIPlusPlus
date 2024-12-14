@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="CTGlobal" Icon="CTGlobal.ico" Color="#4A4A4A" DialogIcons="False">
+  <Actions>
+    <Action Type="Info" Name="WelcomeInfo" Title=" Welcome" ShowCancel="True" Image="http://home.configmgrftw.com/images/CTGlobal.png">
+      <![CDATA[Velkommen – Welkom - Tere tulemast – Bienvenue – Willkommen – Bienvenido – Välkommen]]>
+    </Action>
+   
+  <Action Type="DefaultValues" ValueTypes="OS,Net,Asset,User" ShowProgress="True" />
+    
+    <Action Type="Preflight" Title="Preflight checks" ShowOnFailureOnly="True" ShowBack="True">
+      <!-- <Check Text="WLAN Disconnected" CheckCondition='"%XWLANDisconnected%" = "True"' /> -->
+      <Check Text="Not on battery" CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action>
+
+  <Action Type="TSVar" Variable="SystemNamePrefix">CTG</Action>
+      
+  <Action Type="Input" Name="myInput" Title="Information">
+    <TextInput Prompt="System Name" ForceCase="Upper" Hint="Please enter the name for this system with a prefix of %SystemNamePrefix%" RegEx="%SystemNamePrefix%.{3,5}" Variable="SystemName" Question="Name of this system" />
+    <TextInput Prompt="Primary User" Hint="Please enter the name of the primary user of this system" RegEx=".{3,15}" Variable="PrimaryUser" Question="Primary system user" Required="False"/>
+    <CheckboxInput Prompt="Executive" Variable="IsExecutiveSystem" Question="Is this system for an executive?" Default="False"/>
+  </Action>
+      
+  <Action Type="Input" Name="OUChoice" Title="AD Organizational Unit">
+    <ChoiceInput Variable="OUChoice" AlternateVariable="SystemDept" Default="CDA" Question="Please choose an AD OU for this system" Required="True" AutoComplete="False" Sort="True">
+      <Choice Option="Agriculture Department" AlternateValue="AG"/>
+      <Choice Option="Assessor" AlternateValue="ARC"/>
+      <Choice Option="Auditor" AlternateValue="DF"/>
+      <Choice Option="Board of Supervisors" AlternateValue="BOS" />
+      <Choice Option="ComDev" AlternateValue="CDA" />
+      <Choice Option="County Administrators Office" AlternateValue="CAO" />
+      <Choice Option="County Counsel" AlternateValue="CC" />
+      <Choice Option="Cultural Services" AlternateValue="CU"/>
+      <Choice Option="DA" AlternateValue="DA" />
+      <Choice Option="DCSS" AlternateValue="DCSS" />
+      <Choice Option="DPW" AlternateValue="DPW" />
+      <Choice Option="Elections" AlternateValue="ELEC" />
+      <Choice Option="Fire" AlternateValue="FIRE" />
+      <Choice Option="HHS" AlternateValue="MCHHS" />
+      <Choice Option="Human Resources" AlternateValue="HR" />
+      <Choice Option="IST" AlternateValue="IST" />
+      <Choice Option="Library Administration" AlternateValue="LIB" />
+      <Choice Option="Parks &amp; Open Space" AlternateValue="POS" />
+      <Choice Option="Probation – Adult and Juvenile" AlternateValue="PROB" />
+      <Choice Option="Public Administrator" AlternateValue="PA" />
+      <Choice Option="Public Defender" AlternateValue="PD" />
+      <Choice Option="Retirement" AlternateValue="RET" />
+      <Choice Option="Tax Collector" AlternateValue="DF" />
+    </ChoiceInput>
+  </Action>
+
+    <Action Type="Switch" OnValue='LCase(Trim("%SystemDept%"))' DontEval="False" >
+      <Case RegEx="[abcdefghi].*">
+        <Variable Name="SystemSuffix">1</Variable>
+      </Case>
+      <Case RegEx="[JKLMNOPQR].*">
+        <Variable Name="SystemSuffix">2</Variable>
+      </Case>
+      <Case RegEx="[STUVWXYZ].*">
+        <Variable Name="SystemSuffix">3</Variable>
+      </Case>
+    </Action>
+
+    <Action Type="TSVar" Variable="SystemNameFinal" DontEval="True">%SystemName%-%SystemSuffix%</Action>
+
+
+    <Action Type="Info" Name="FinalInfo" Title="Summary" Image="http://home.configmgrftw.com/images/CTGlobal.png" ShowCancel="True" ShowBack="True" >
+      <![CDATA[<b>System name:</b>  %SystemNameFinal%<br><b>OU:</b>  %OUChoice%]]>
+  </Action>
+    
+    <Action Type="Info" Name="ThankYouInfo" Title="Thank You" ShowCancel="True" Image="http://home.configmgrftw.com/images/CTGlobal.png">
+      <![CDATA[Tak – Dank u - Aitäh – Merci – Danke – Gracias – Tack]]>
+    </Action>
+    
+	<Action Type="TSVar" Name="OSDComputerName" DontEval="True">%SystemName%</Action>
+	
+  </Actions>
+</UIpp>

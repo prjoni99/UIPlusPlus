@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="UI++" Icon="resources\UI++2.ico">
+  <Software>
+    <Package Id="dotNET462" Label=".NET Framework 4.6.2" PkgID="ONE000100" ProgramName="Install .Net 4.6.2"/>
+    <Application Id="AdobeReaderDC" Label="Adobe Reader DC" Name="Adobe Reader DC" />
+    <Application Id="PowerArchiver2016" Label="PowerArchiver 2016" Name="PowerArchiver 16.10" />
+    <Application Id="PuTTY" Label="PuTTY 0.67" Name="PuTTY 0.67"/>
+    <Application Id="RoyalTS" Label="Royal TS V2" Name="Royal TS V2"/>
+    <Application Id="FileZilla32302" Label="FileZilla 3.23.02" Name="FileZilla 3.23.02"/>
+    <Application Id="MSOffice2016" Label="Microsoft Office 2016" Name="Microsoft Office 2016"/>
+    <Application Id="Npp691" Label="Notepad++ v6.9.1" Name="Notepad++ v6.9.1" />
+    <Application Id="PowerShellStudio2016" Label="PowerShell Studio 2016" Name="PowerShell Studio 2016" />
+    <Application Id="Paint.NET" Label="Paint.NET" Name="Paint.NET" />
+    <Application Id="SnagIT13" Label="SnagIT 13.0.3" Name="SnagIT 13.0.3" />
+    <Application Id="Camtasia9" Label="Camtasia 9.0.1" Name="Camtasia 9.0.1" />
+  </Software>
+
+  <Actions>
+    <!-- <Action Type="FileRead" DeleteLine="False" Variable="SystemNameSuffix" Filename="TextFile1.txt" />
+    <Action Type="ErrorInfo" Title="Error" Condition='"%SystemNameSuffix%" = ""'>
+      <![CDATA[There was an error attempting to name this system. Please contact your system administrator.]]>
+    </Action>
+    <Action Type="ExternalCall" Title="External Command" MaxRunTime="50" ExitCodeVariable="ExitCode">cmd.exe /k dir</Action>    
+    <Action Type="DefaultValues" ShowProgress="True"/>
+    <Action Type="WMIRead" Variable="Tier" Namespace="root\ConfigMgrFTW" Class="ServerInfo" Property="Tier"/>
+    <Action Type="Preflight" Title="Preflight checks">
+      <Check Text="WLAN Disconnected" CheckCondition='"%XWLANDisconnected%" = "True"' />
+      <Check Text="Not on battery" CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action> -->
+    <!--<Action Type="UserAuth" Title="User Authentication" Domain="lab100.configmgrftw.com" MaxRetryCount="5"/> -->
+    <Action Type="Info" Name="myInfo" Title="Welcome" Image="resources\coretech.png" InfoImage="http://home.configmgrftw.com/images/coretechnew.png" ShowCancel="True" ShowBack="True">
+      <![CDATA[UI++ 2.0 includes all of the power of UI++ 1.0 combined with UI App Tree!<br>It's UI, <b>interactive </b>, evolved, and customized.<br>]]>
+    </Action>
+    <Action Type="Input" Name="myInput" Title="Information">
+      <TextInput Prompt="System Name" Hint="Please enter the name for this system with a suffix of %SystemNameSuffix%" RegEx=".{3,5}%SystemNameSuffix%" Variable="SystemName" Question="Name of this system" />
+      <TextInput Prompt="Primary User" Hint="Please enter the name of the primary user of this system" RegEx=".{3,15}" Variable="PrimaryUser" Question="Primary system user" Required="False"/>
+      <CheckboxInput Prompt="Executive" Variable="IsExecutiveSystem" Question="Is this system for an executive?" Default="False"/>
+    </Action>
+    <Action Type="Input" Name="OUChoice" Title="AD Organizational Unit">
+      <ChoiceInput Variable="OUChoice" AlternateVariable="SystemPrefix" Question="Please choose an AD OU for this system" Required="False" >
+        <Choice Option="Agriculture Department" AlternateValue="AG"/>
+        <Choice Option="Assessor" AlternateValue="ARC"/>
+        <Choice Option="Auditor" AlternateValue="DF"/>
+        <Choice Option="Board of Supervisors" AlternateValue="BOS" />
+        <Choice Option="ComDev" AlternateValue="CDA" />
+        <Choice Option="County Administrators Office" AlternateValue="CAO" />
+        <Choice Option="County Counsel" AlternateValue="CC" />
+        <Choice Option="Cultural Services" AlternateValue="CU"/>
+        <Choice Option="DA" AlternateValue="DA" />
+        <Choice Option="DCSS" AlternateValue="DCSS" />
+        <Choice Option="DPW" AlternateValue="DPW" />
+        <Choice Option="Elections" AlternateValue="ELEC" />
+        <Choice Option="Fire" AlternateValue="FIRE" />
+        <Choice Option="HHS" AlternateValue="MCHHS" />
+        <Choice Option="Human Resources" AlternateValue="HR" />
+        <Choice Option="IST" AlternateValue="IST" />
+        <Choice Option="Library Administration" AlternateValue="LIB" />
+        <Choice Option="Parks &amp; Open Space" AlternateValue="POS" />
+        <Choice Option="Probation – Adult and Juvenile" AlternateValue="PROB" />
+        <Choice Option="Public Administrator" AlternateValue="PA" />
+        <Choice Option="Public Defender" AlternateValue="PD" />
+        <Choice Option="Retirement" AlternateValue="RET" />
+        <Choice Option="Tax Collector" AlternateValue="DF" />
+      </ChoiceInput>
+    </Action>
+     <Action Type="AppTree" Size="Tall" Title="Please choose your software" Expanded="True">
+      <SoftwareSets>
+          <Set Name="Default">
+            <SoftwareGroup Id="Main" Label="Main">
+              <SoftwareGroup Id="Required" Label="Required" Required="True">
+                <SoftwareRef Id="dotNET462" />
+              </SoftwareGroup>
+              <SoftwareRef Id="MSOffice2016" />
+              <SoftwareRef Id="AdobeReaderDC" />
+            </SoftwareGroup>
+          <SoftwareGroup Id="Graphics" Label="Graphics">
+              <SoftwareRef Id="Paint.NET" />
+              <SoftwareRef Id="SnagIT13" />
+              <SoftwareRef Id="Camtasia9" />
+            </SoftwareGroup>
+            <SoftwareGroup Id="Network" Label="Main">
+              <SoftwareRef Id="PuTTY" />
+              <SoftwareRef Id="RoyalTS" />
+              <SoftwareRef Id="FileZilla32302" />
+            </SoftwareGroup>
+            <SoftwareGroup Id="Scripting" Label="Main">
+              <SoftwareRef Id="Npp691" />
+              <SoftwareRef Id="PowerShellStudio2016" />
+          </SoftwareGroup>
+  </Set>
+      </SoftwareSets>
+    </Action>
+  </Actions>
+</UIpp>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="UI++" Icon="UI++2.ico">
+
+	<Actions>
+
+    <Action Type="RegRead" Hive="HKLM" Key="SOFTWARE\Adobe\Acrobat Distiller\DC\Installer" Value="ReinstallMode" Variable="RegVal" Default="BooYa"/>
+    <Action Type="WMIRead" Variable="Service" Namespace="root\cimv2" Class="Win32_Service" KeyQualifier='Name="wuauserv"' Property="Captionx" Default="BooYa2"/>
+    <Action Type="DefaultValues" ValueTypes="All"/>
+    <!-- <Action Type="Vars" Direction="Load"/> -->
+    <Action Type="Info" Name="myInfo" Title="Welcome" ShowBack="True" ShowCancel="True">
+      <![CDATA[UI++ 2.0 includes all of the power of UI++ 1.0 combined with UI App Tree!<br>It's UI, <b>interactive </b>, evolved, and customized.<br>1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]]>
+    </Action>
+    <Action Type="Input" Name="SystemOS" Title="Operating System and Role" ShowBack="True" >
+      <ChoiceInput Variable="IntendedOS" Question="Please select the OS for this system" Required="True" >
+        <Choice Option="Windows 7" Value="Win7"/>
+        <Choice Option="Windows 10" Value="Win10" />
+      </ChoiceInput>
+      <ChoiceInput Variable="SystemRole" Question="Please select the role for this system" Required="True">
+        <Choice Option="New Computer" Value="Standard"/>
+        <Choice Option="Refresh" Value="Whatever"/>
+        <Choice Option="Recycle" Value="Whatever2"/>
+      </ChoiceInput>
+    </Action>
+    <Action Type="Info" Name="myInfo" Title="Welcome" ShowBack="True" ShowCancel="False">
+      <![CDATA[The second dialog.]]>
+    </Action>
+    <Action Type="UserAuth" Title="User Authentication" Domain="lab100.configmgrftw.com" MaxRetryCount="5" ShowBack="True">
+      <Field Name="Domain" ReadOnly="False" />
+    </Action>
+	  <!-- <Action Type="Info" Name="myInfo" Title="Welcome">
+      <![CDATA[UI++ 2.0 includes all of the power of UI++ 1.0 combined with UI App Tree!<br>It's UI, <b>interactive </b>, evolved, and customized.<br>1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]]>
+    </Action>  -->  
+    <!-- <Action Type="Preflight" Title="Preflight checks">
+      <Check Text="WLAN Disconnected" CheckCondition='"%XWLANDisconnected%" = "True"' />
+      <Check Text="Not on battery" CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action> -->
+	
+    <Action Type="TSVar" Name="SystemSuffix" Condition='"%XHWChassisType%" = "Desktop"'>D</Action>
+    <Action Type="TSVar" Name="SystemSuffix" Condition='"%XHWChassisType%" = "Laptop"'>L</Action>
+    <Action Type="TSVar" Name="SystemSuffix" Condition='"%XHWChassisType%" <> "Laptop" And "%XHWChassisType%" <> "Desktop"'>X</Action>
+
+    <Action Type="TSVar" Name="SystemNameRegEx">A(?!00000)\d{5}%SystemSuffix%</Action>
+
+    <Action Type="Input" Name="SystemName" Title="System Name">
+      <TextInput Prompt="System Name" Hint="'A' followed by five digits followed by '%SystemSuffix%'" RegEx="%SystemNameRegEx%" Variable="SystemName" Question="Name for this system" Default="%XHWAssetTag%%SystemSuffix%"/>      
+    </Action>
+
+    <Action Type="TSVar" Name="SMSTSPreferredAdvertID" Condition='"%IntendedOS%" = "Win7"'>PS12000C</Action>
+    <Action Type="TSVar" Name="SMSTSPreferredAdvertID" Condition='"%IntendedOS%" = "Win10"'>PS12000B</Action>
+    <Action Type="TSVar" Name="OSDComputerName">%SystemName%</Action>
+    <Action Type="Vars" Direction="Save"/>
+  </Actions>
+</UIpp>

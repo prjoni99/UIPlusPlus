@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ABEEC150-1E98-4C53-98E4-1DC673758355}</ProjectGuid>
+    <RootNamespace>UI</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <TargetName>$(ProjectName)64d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <TargetName>$(ProjectName)64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;PUGIXML_WCHAR_MODE;XLISTCTRLLIB_STATIC;CURL_STATICLIB;SECURITY_WIN32;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)\FTWCMLog;$(SolutionDir)\FTWldap;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x86-debug-static-ipv6-sspi-schannel\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>crypt32.lib;Normaliz.lib;wldap32.lib;Netapi32.lib;Secur32.lib;Wscapi.lib;libcurl_a_debug.lib;FTWldapd.lib;FTWCMLogd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Build\$(Configuration)\$(Platform)\;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x86-debug-static-ipv6-sspi-schannel\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>UI32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;PUGIXML_WCHAR_MODE;XLISTCTRLLIB_STATIC;CURL_STATICLIB;SECURITY_WIN32;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)\FTWCMLog;$(SolutionDir)\FTWldap;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x64-debug-static-ipv6-sspi-schannel\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>crypt32.lib;Normaliz.lib;wldap32.lib;Netapi32.lib;Secur32.lib;Wscapi.lib;libcurl_a_debug.lib;FTWldap64d.lib;FTWCMLog64d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Build\$(Configuration)\$(Platform)\;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x64-debug-static-ipv6-sspi-schannel\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>UI64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;PUGIXML_WCHAR_MODE;XLISTCTRLLIB_STATIC;CURL_STATICLIB;SECURITY_WIN32;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)\FTWCMLog;$(SolutionDir)\FTWldap;C:\Users\JasonSandys\Source\curl-7.583.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-schannel\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>crypt32.lib;Normaliz.lib;wldap32.lib;Netapi32.lib;Secur32.lib;Wscapi.lib;libcurl_a.lib;FTWldap.lib;FTWCMLog.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Build\$(Configuration)\$(Platform)\;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x86-release-static-ipv6-sspi-schannel\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>UI32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;PUGIXML_WCHAR_MODE;XLISTCTRLLIB_STATIC;CURL_STATICLIB;SECURITY_WIN32;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)\FTWCMLog;$(SolutionDir)\FTWldap;C:\Users\JasonSandys\source\curl-7.83.1\builds\libcurl-vc14-x64-release-static-ipv6-sspi-schannel\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>crypt32.lib;Normaliz.lib;wldap32.lib;Netapi32.lib;Secur32.lib;Wscapi.lib;libcurl_a.lib;FTWldap64.lib;FTWCMLog64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Build\$(Configuration)\$(Platform)\;C:\Users\JasonSandys\Source\curl-7.83.1\builds\libcurl-vc14-x64-release-static-ipv6-sspi-schannel\lib</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>UI64;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actions\IAction.h" />
+    <ClInclude Include="Actions\Actions.h" />
+    <ClInclude Include="Actions\ActionDefaultValues.h" />
+    <ClInclude Include="Actions\ActionHelper.h" />
+    <ClInclude Include="CodeProject\ComboCompletion\ComboCompletion.h" />
+    <ClInclude Include="Dialogs\DlgAppTree.h" />
+    <ClInclude Include="CodeProject\CmdLine\CmdLine.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTrait.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitCombo.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitDateTime.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitEdit.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitHyperLink.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitImage.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitMultilineEdit.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitText.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitVisitor.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridListCtrlEx.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridListCtrlGroups.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTrait.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitText.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitVisitor.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitXP.h" />
+    <ClInclude Include="CodeProject\GridListCtrlEx\ViewConfigSection.h" />
+    <ClInclude Include="CodeProject\KCSideBannerWnd\KCSideBannerWnd.h" />
+    <ClInclude Include="CodeProject\KCSideBannerWnd\WndUtil.h" />
+    <ClInclude Include="CodeProject\regkey.h" />
+    <ClInclude Include="CodeProject\WndResizer\WndResizer.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Dialogs\DlgBase.h" />
+    <ClInclude Include="Dialogs\DlgData.h" />
+    <ClInclude Include="Dialogs\DlgTSVar.h" />
+    <ClInclude Include="Dialogs\DlgProgress.h" />
+    <ClInclude Include="Dialogs\DlgUserAuth.h" />
+    <ClInclude Include="Dialogs\DlgUserInfoFullScreen.h" />
+    <ClInclude Include="fnv1a.hpp" />
+    <ClInclude Include="FTW\ComInit.h" />
+    <ClInclude Include="FTW\FTWBrowseEdit.h" />
+    <ClInclude Include="FTW\FTWControl.h" />
+    <ClInclude Include="FTW\FTWError.h" />
+    <ClInclude Include="FTW\FTWTreeCtrl.h" />
+    <ClInclude Include="FTW\FTWHTTP.h" />
+    <ClInclude Include="FTW\FTWVersion.h" />
+    <ClInclude Include="FTW\TSProgress.h" />
+    <ClInclude Include="FTW\Utils.h" />
+    <ClInclude Include="FTW\WMIAccess.h" />
+    <ClInclude Include="HansDietrich\CreateGrayscaleIcon.h" />
+    <ClInclude Include="HansDietrich\CXDC.h" />
+    <ClInclude Include="HansDietrich\CXPoint.h" />
+    <ClInclude Include="HansDietrich\CXRect.h" />
+    <ClInclude Include="HansDietrich\cxtooltipctrl.h" />
+    <ClInclude Include="HansDietrich\CXWaitCursor.h" />
+    <ClInclude Include="HansDietrich\ensure.h" />
+    <ClInclude Include="HansDietrich\FontSize.h" />
+    <ClInclude Include="HansDietrich\OddButton.h" />
+    <ClInclude Include="HansDietrich\VisualStylesXP.h" />
+    <ClInclude Include="HansDietrich\XArray.h" />
+    <ClInclude Include="HansDietrich\XBalloonMsg.h" />
+    <ClInclude Include="HansDietrich\XButtonXP.h" />
+    <ClInclude Include="HansDietrich\XColorStatic.h" />
+    <ClInclude Include="HansDietrich\XDisplayImage.h" />
+    <ClInclude Include="HansDietrich\XHTMLCtrl.h" />
+    <ClInclude Include="HansDietrich\XHtmlDraw.h" />
+    <ClInclude Include="HansDietrich\XHtmlDrawLink.h" />
+    <ClInclude Include="HansDietrich\XHyperLink.h" />
+    <ClInclude Include="HansDietrich\XNamedColors.h" />
+    <ClInclude Include="HansDietrich\XStack.h" />
+    <ClInclude Include="HansDietrich\XString.h" />
+    <ClInclude Include="HansDietrich\XThemeHelper.h" />
+    <ClInclude Include="HansDietrich\XTrace.h" />
+    <ClInclude Include="Dialogs\DlgUserInfo.h" />
+    <ClInclude Include="Dialogs\DlgUserInput.h" />
+    <ClInclude Include="Dialogs\DlgPreflight.h" />
+    <ClInclude Include="pugi\pugiconfig.hpp" />
+    <ClInclude Include="pugi\pugixml.hpp" />
+    <ClInclude Include="RegExEdit.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScriptHost.h" />
+    <ClInclude Include="Software.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TooltipStatic.h" />
+    <ClInclude Include="TSVar.h" />
+    <ClInclude Include="UI++.h" />
+    <ClInclude Include="UserInputBase.h" />
+    <ClInclude Include="UserInfoCheck.h" />
+    <ClInclude Include="UserInputCheckbox.h" />
+    <ClInclude Include="UserInputChoice.h" />
+    <ClInclude Include="UserInputChoiceOptions.h" />
+    <ClInclude Include="UserInputInfo.h" />
+    <ClInclude Include="UserInputText.h" />
+    <ClInclude Include="version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Actions\ActionHelper.cpp" />
+    <ClCompile Include="Actions\IAction.cpp" />
+    <ClCompile Include="Actions\Actions.cpp" />
+    <ClCompile Include="Actions\InteractiveActions.cpp" />
+    <ClCompile Include="Dialogs\DlgUserInfoFullScreen.cpp" />
+    <ClCompile Include="CodeProject\ComboCompletion\ComboCompletion.cpp" />
+    <ClCompile Include="Dialogs\DlgAppTree.cpp" />
+    <ClCompile Include="CodeProject\CmdLine\CmdLine.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitCombo.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitDateTime.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitEdit.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitHyperLink.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitImage.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitMultilineEdit.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitText.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridListCtrlEx.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridListCtrlGroups.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridRowTraitText.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridRowTraitXP.cpp" />
+    <ClCompile Include="CodeProject\GridListCtrlEx\ViewConfigSection.cpp" />
+    <ClCompile Include="CodeProject\KCSideBannerWnd\KCSideBannerWnd.cpp" />
+    <ClCompile Include="CodeProject\WndResizer\WndResizer.cpp" />
+    <ClCompile Include="Actions\ActionDefaultValues.cpp" />
+    <ClCompile Include="Actions\ActionExternalCall.cpp" />
+    <ClCompile Include="FTW\FTWBrowseEdit.cpp" />
+    <ClCompile Include="FTW\FTWControl.cpp" />
+    <ClCompile Include="FTW\FTWTreeCtrl.cpp" />
+    <ClCompile Include="FTW\FTWHTTP.cpp" />
+    <ClCompile Include="FTW\TSProgress.cpp" />
+    <ClCompile Include="FTW\Utils.cpp" />
+    <ClCompile Include="FTW\WMIAccess.cpp" />
+    <ClCompile Include="HansDietrich\FontSize.cpp" />
+    <ClCompile Include="HansDietrich\OddButton.cpp" />
+    <ClCompile Include="HansDietrich\VisualStylesXP.cpp" />
+    <ClCompile Include="HansDietrich\XBalloonMsg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XButtonXP.cpp" />
+    <ClCompile Include="HansDietrich\XColorStatic.cpp" />
+    <ClCompile Include="HansDietrich\XDisplayImage.cpp" />
+    <ClCompile Include="HansDietrich\XHTMLCtrl.cpp" />
+    <ClCompile Include="HansDietrich\XHtmlDraw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHtmlDrawLink.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHyperLink.cpp" />
+    <ClCompile Include="HansDietrich\XNamedColors.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XString.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XThemeHelper.cpp" />
+    <ClCompile Include="Dialogs\DlgUserInfo.cpp" />
+    <ClCompile Include="Dialogs\DlgUserInput.cpp" />
+    <ClCompile Include="Dialogs\DlgPreflight.cpp" />
+    <ClCompile Include="pugi\pugixml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="RegExEdit.cpp" />
+    <ClCompile Include="ScriptHost.cpp" />
+    <ClCompile Include="Software.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TooltipStatic.cpp" />
+    <ClCompile Include="TSVar.cpp" />
+    <ClCompile Include="Dialogs\DlgTSVar.cpp" />
+    <ClCompile Include="UI++.cpp" />
+    <ClCompile Include="Dialogs\DlgBase.cpp" />
+    <ClCompile Include="Dialogs\DlgProgress.cpp" />
+    <ClCompile Include="Dialogs\DlgUserAuth.cpp" />
+    <ClCompile Include="Actions\ActionUserInput.cpp" />
+    <ClCompile Include="UserInputBase.cpp" />
+    <ClCompile Include="UserInfoCheck.cpp" />
+    <ClCompile Include="UserInputCheckbox.cpp" />
+    <ClCompile Include="UserInputChoice.cpp" />
+    <ClCompile Include="UserInputInfo.cpp" />
+    <ClCompile Include="UserInputText.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UI++.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FTW\TSCore.dll" />
+    <None Include="FTW\tsprogressui.exe" />
+    <None Include="resource.hm" />
+    <None Include="res\UI.rc2" />
+    <None Include="UI++.APS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ButtonBack-Grey.ico" />
+    <Image Include="res\ButtonBack.ico" />
+    <Image Include="res\ButtonCancel-Grey.ico" />
+    <Image Include="res\ButtonCancel.ico" />
+    <Image Include="res\ButtonOK-Grey.ico" />
+    <Image Include="res\ButtonOK.ico" />
+    <Image Include="res\ButtonRefresh-Grey.ico" />
+    <Image Include="res\ButtonRefresh.ico" />
+    <Image Include="res\ButtonRestart.ico" />
+    <Image Include="res\DlgAppTree.ico" />
+    <Image Include="res\DlgAuth.ico" />
+    <Image Include="res\DlgInfo.ico" />
+    <Image Include="res\DlgInput.ico" />
+    <Image Include="res\DlgPreflight.ico" />
+    <Image Include="res\DlgStop.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\InfoTip.ico" />
+    <Image Include="res\InputAttention.ico" />
+    <Image Include="res\StatusFailed.ico" />
+    <Image Include="res\StatusPassed.ico" />
+    <Image Include="res\StatusWarning.ico" />
+    <Image Include="res\UI++ Tree Checkboxes.bmp" />
+    <Image Include="res\UI++ Tree.bmp" />
+    <Image Include="res\UI++.ico" />
+    <Image Include="res\UI++2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="UI++-UCS.xml" />
+    <Xml Include="UI++.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UI++IGT.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="UI++2.xml" />
+    <Xml Include="UI++3.xml" />
+    <Xml Include="UI++AWS.xml" />
+    <Xml Include="UI++GLIC.xml" />
+    <Xml Include="UI++LH.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="UI++.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

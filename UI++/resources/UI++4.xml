@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="UI++" Icon="UI++2.ico">
+	<Actions>
+    <Action Type="DefaultValues" />
+    <Action Type="Preflight" Title="Preflight checks">
+      <Check Text="WLAN Disconnected" CheckCondition='"%XWLANDisconnected%" = "True"' />
+      <Check Text="Not on battery" CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action>
+    <Action Type="UserAuth" Title="User Authentication" Domain="lab100.configmgrftw.com" MaxRetryCount="5"/>
+    <Action Type="DefaultValues" />
+    <Action Type="WMIRead" Variable="Tier" Namespace="root\ConfigMgrFTW" Class="ServerInfo" Property="Tier"/>
+	<Action Type="Info" Name="myInfo" Title="Welcome %XAuthenticatedUser%">
+      <![CDATA[UI++ 2.0 includes all of the power of UI++ 1.0 combined with UI App Tree!<br>It's UI, <b>interactive </b>, evolved, and customized.<br>]]>
+    </Action>
+    <Action Type="Input" Name="myInput" Title="Information" Condition='"%XAuthenticatedUser%" = "Jason"'>
+      <TextInput Prompt="Primary Administrator" Hint="Enter the name of primary administrator for this system" RegEx=".*" Variable="PrimaryAdmin" Question="Primary administrator for this system" />
+      <TextInput Prompt="Primary Application or Role" Hint="Enter the name of the primary application on or role for this system" RegEx=".*" Variable="PrimaryApp" Question="Primary application or role for this system" Required="False"/>
+    </Action>
+    <Action Type="Input" Name="myInput" Title="User Input Time">
+      <ChoiceInput Variable="Tier" AlternateVariable="TierB" Question="Please enter the tier for this system" Required="True" >
+        <Choice Option="0" Value="0" AlternateValue="A"/>
+        <Choice Option="1" Value="1" AlternateValue="B" />
+        <Choice Option="2" Value="2" AlternateValue="C" />
+        <Choice Option="3" Value="3" AlternateValue="D"  Condition='"%XAuthenticatedUser%" = "Jason"'/>
+        <Choice Option="4" Value="4" AlternateValue="E" />
+        <Choice Option="5" Value="5" AlternateValue="F" />
+        <Choice Option="6" Value="6" AlternateValue="G" />
+        <Choice Option="7" Value="7" AlternateValue="H" />
+        <Choice Option="8" Value="8" AlternateValue="I" />
+        <Choice Option="9" Value="9" AlternateValue="J" />
+        <Choice Option="10" Value="10" AlternateValue="K" />
+        <Choice Option="11" Value="11" AlternateValue="L" />
+        <Choice Option="12" Value="12" AlternateValue="M" />
+        <Choice Option="13" Value="13" AlternateValue="N" />
+        <Choice Option="14" Value="14" AlternateValue="O" />
+        <Choice Option="15" Value="15" AlternateValue="P" />
+        <Choice Option="16" Value="16" AlternateValue="Q" />
+        <Choice Option="17" Value="17" AlternateValue="R" />
+        <Choice Option="18" Value="4" AlternateValue="S" />
+        <Choice Option="19" Value="4" AlternateValue="T" />
+      </ChoiceInput>
+    </Action>
+    <Action Type="WMIWrite" Namespace="root\ConfigMgrFTW" Class="ServerInfo" >
+      <Property Name="Tier" Type="CIM_UINT8" Value="%Tier%" Key="False"/>
+      <Property Name="PrimaryApp" Type="CIM_STRING" Value="%PrimaryApp%" Key="True"/>
+      <Property Name="PrimaryAdmin" Type="CIM_STRING" Value="%PrimaryAdmin%" Key="False"/>
+    </Action>
+  </Actions>
+</UIpp>
+
+

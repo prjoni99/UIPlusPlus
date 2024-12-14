@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="UI++" Icon="UI++2.ico" Color="#800000" DialogIcons="Yes">
+	<Actions>
+    <Action Type="Vars" Direction="Load"/>
+    <Action Type="DefaultValues" />
+    <Action Type="Input" Size="Tall" Name="myInput" Title="Information">
+      <TextInput Prompt="Primary Administrator" Hint="Enter the name of primary administrator for this system" Variable="PrimaryAdmin" Question="Primary administrator for this system" />
+      <TextInput Prompt="Primary Application or Role" Hint="Enter the name of the primary application on or role for this system" Variable="PrimaryApp" Question="Primary application or role for this system" />
+    </Action>
+   <Action Type="Input" Name="myInput" Title="User Input Time">
+      <ChoiceInput Variable="Tier" AlternateVariable="TierB" Question="Please enter the tier for this system" Required="True" Default="%CurrentTier%">
+        <Choice Option="0" Value="0" AlternateValue="A"/>
+        <Choice Option="1" Value="1" AlternateValue="B" />
+        <Choice Option="2" Value="2" AlternateValue="C" />
+        <Choice Option="3" Value="3" AlternateValue="D"  Condition='"%XAuthenticatedUser%" = "Jason"'/>
+        <Choice Option="4" Value="4" AlternateValue="E" />
+        <Choice Option="5" Value="5" AlternateValue="F" />
+        <Choice Option="6" Value="6" AlternateValue="G" />
+        <Choice Option="7" Value="7" AlternateValue="H" />
+        <Choice Option="8" Value="8" AlternateValue="I" />
+        <Choice Option="9" Value="9" AlternateValue="J" />
+      </ChoiceInput>
+    </Action>
+
+  </Actions>
+</UIpp>
+
+

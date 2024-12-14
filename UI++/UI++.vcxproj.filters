@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="XML Files">
+      <UniqueIdentifier>{0b84f6ea-afbc-48af-a7aa-6aef17d0db8d}</UniqueIdentifier>
+      <Extensions>xml</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Actions">
+      <UniqueIdentifier>{657a83dd-afda-46ec-8dbf-e709842197cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialogs">
+      <UniqueIdentifier>{7d146746-409e-4c69-b3b9-10bdf99ee3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\X">
+      <UniqueIdentifier>{ba9300ed-32f9-4b32-8fa2-c47c2d364614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Grid">
+      <UniqueIdentifier>{e2be9973-3d02-4f5b-a6bc-6afc7899c33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Libs">
+      <UniqueIdentifier>{32abbd3f-ee67-4fa4-aa2c-99b6a9dcce5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controls">
+      <UniqueIdentifier>{fcbdccb1-be09-4212-ba70-65c50dcf2502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actions">
+      <UniqueIdentifier>{44d3ab20-bc0e-48e3-a966-b6034fca72e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\X">
+      <UniqueIdentifier>{8065478a-97a5-417f-a2fa-494ca35cf9a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Libs">
+      <UniqueIdentifier>{14dcec60-9c71-446d-a940-3dfa79411f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Grid">
+      <UniqueIdentifier>{20d2c98b-9235-4990-ac1a-621e46701363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controls">
+      <UniqueIdentifier>{a3d339b7-70ce-437c-bf94-161ad3106648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Dialogs">
+      <UniqueIdentifier>{937e31ce-cc6d-44b1-ab76-27f9bbba3f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UserItems">
+      <UniqueIdentifier>{529d857b-452a-4954-8f74-39ff77b5a27a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UserItems">
+      <UniqueIdentifier>{e7d93b9e-8dc4-4ee9-8f80-92151bcf7726}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UI++.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Software.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\ensure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionDefaultValues.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Actions.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTrait.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitCombo.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitDateTime.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitEdit.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitHyperLink.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitImage.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitMultilineEdit.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitText.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridColumnTraitVisitor.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridListCtrlEx.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridListCtrlGroups.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTrait.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitText.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitVisitor.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\CGridRowTraitXP.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\CmdLine\CmdLine.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\ComboCompletion\ComboCompletion.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\CreateGrayscaleIcon.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\CXDC.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\CXPoint.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\CXRect.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\cxtooltipctrl.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\CXWaitCursor.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgAppTree.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgPreflight.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgUserInfo.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgUserInput.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgBase.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgTSVar.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgUserAuth.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\FontSize.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWTreeCtrl.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\KCSideBannerWnd\KCSideBannerWnd.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\OddButton.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="RegExEdit.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="pugi\pugiconfig.hpp">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="pugi\pugixml.hpp">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\regkey.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptHost.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="TooltipStatic.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\TSProgress.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="TSVar.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\GridListCtrlEx\ViewConfigSection.h">
+      <Filter>Header Files\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XArray.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XBalloonMsg.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XButtonXP.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XColorStatic.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XDisplayImage.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XHTMLCtrl.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XHtmlDraw.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XHtmlDrawLink.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XHyperLink.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XNamedColors.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XStack.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XString.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XThemeHelper.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\XTrace.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="HansDietrich\VisualStylesXP.h">
+      <Filter>Header Files\X</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\WndResizer\WndResizer.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWError.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeProject\KCSideBannerWnd\WndUtil.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgProgress.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgData.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWHTTP.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWBrowseEdit.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWControl.h">
+      <Filter>Header Files\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\ComInit.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\WMIAccess.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="FTW\FTWVersion.h">
+      <Filter>Header Files\Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogs\DlgUserInfoFullScreen.h">
+      <Filter>Header Files\Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="fnv1a.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\IAction.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionHelper.h">
+      <Filter>Header Files\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputText.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputCheckbox.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputChoice.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputInfo.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInfoCheck.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputBase.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInputChoiceOptions.h">
+      <Filter>Header Files\UserItems</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UI++.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionDefaultValues.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionExternalCall.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionUserInput.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Actions.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgAppTree.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgPreflight.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgTSVar.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgBase.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgUserAuth.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgUserInfo.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgUserInput.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XBalloonMsg.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XButtonXP.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XColorStatic.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XDisplayImage.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHTMLCtrl.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHtmlDraw.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHtmlDrawLink.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XHyperLink.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XNamedColors.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XString.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\XThemeHelper.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitCombo.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitDateTime.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitEdit.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitHyperLink.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitImage.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitMultilineEdit.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridColumnTraitText.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridListCtrlEx.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridListCtrlGroups.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridRowTraitText.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\CGridRowTraitXP.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\GridListCtrlEx\ViewConfigSection.cpp">
+      <Filter>Source Files\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\CmdLine\CmdLine.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="pugi\pugixml.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\TSProgress.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\OddButton.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\KCSideBannerWnd\KCSideBannerWnd.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\ComboCompletion\ComboCompletion.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeProject\WndResizer\WndResizer.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="TooltipStatic.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="RegExEdit.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\FontSize.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="HansDietrich\VisualStylesXP.cpp">
+      <Filter>Source Files\X</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptHost.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\FTWTreeCtrl.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Software.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TSVar.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgProgress.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\FTWHTTP.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\FTWControl.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\FTWBrowseEdit.cpp">
+      <Filter>Source Files\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\WMIAccess.cpp">
+      <Filter>Source Files\Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="FTW\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogs\DlgUserInfoFullScreen.cpp">
+      <Filter>Source Files\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\InteractiveActions.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\IAction.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionHelper.cpp">
+      <Filter>Source Files\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputText.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputCheckbox.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputChoice.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputInfo.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInfoCheck.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInputBase.cpp">
+      <Filter>Source Files\UserItems</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UI++.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\UI.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UI++.APS" />
+    <None Include="FTW\TSCore.dll" />
+    <None Include="FTW\tsprogressui.exe" />
+    <None Include="resource.hm">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\UI++.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\UI++ Tree Checkboxes.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\UI++ Tree.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\UI++2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonBack.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonBack-Grey.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonCancel.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonCancel-Grey.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonOK.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonOK-Grey.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonRefresh.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonRefresh-Grey.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgAppTree.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgAuth.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgInfo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgInput.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgPreflight.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\DlgStop.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\InfoTip.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\InputAttention.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\StatusFailed.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\StatusPassed.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\StatusWarning.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ButtonRestart.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="UI++LH.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++AWS.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++2.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++3.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++GLIC.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++-UCS.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++IGT.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+    <Xml Include="UI++.xml">
+      <Filter>XML Files</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

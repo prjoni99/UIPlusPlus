@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="ConfigMgr FTW" Icon="xyz.ico" Color="#2233DD" DialogIcons="True" Flat="False">
+  <Actions>
+
+    <Action Type="Info" Name="WelcomeInfo" Title=" Welcome" ShowCancel="True" Timeout="120" TimeoutAction="Continue" Image="http://home.configmgrftw.com/images/CTGlobal.png">
+      <![CDATA[Velkommen – Welkom - Tere tulemast – Bienvenue – Willkommen – Bienvenido – Välkommen]]>
+    </Action>
+
+    <Action Type="UserAuth" Title="User Authentication" Domain="lab300.configmgrftw.com" GetGroups="False" MaxRetryCount="5" DisableCancel="True">
+      <Field Name="Domain" List="lab300.configmgrftw.com,lab200.configmgrftw.com" AutoComplete="true"/>
+    </Action>
+    
+    <Action Type="WMIRead" Namespace="root\cimv2" Query="SELECT DeviceID from Win32_LogicalDisk" Property="DeviceID" Variable="csmodel" Default="TRS-80"/>
+
+    <Action Type="DefaultValues" ValueTypes="Network" ShowProgress="True" />
+    
+    <!-- <Action Type="Preflight" Title="Preflight checks" ShowOnFailureOnly="True" ShowBack="True">
+      <Check Text="WLAN Disconnected" Description="To prevent issues during deployment, a wired connection is required." ErrorDescription="Please disconnect the wireless network from this system." CheckCondition='"%XWLANDisconnected%" = "True"' />
+      <Check Text="Not on battery" ErrorDescription="Please ensure that the system is connected to AC Power." CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action> 
+
+    <Action Type="TSVar" Variable="SystemNameSuffix">CTG</Action>
+
+    <Action Type="Switch" OnValue='Left("%SystemNameSuffix%", 2) &amp; "12"' DontEval="False" Variable="Test">
+      <Case RegEx="CTG123">CTG it isn't</Case>
+      <Case RegEx="\w{2}">2chars</Case>
+      <Case RegEx="CTGX">CTG it is</Case>
+      <Case RegEx="(\W|^)(CT|CT123|drat|fooey|gosh\sdarnit|heck)(\W|$)">CTG it is</Case>
+      <Default>Default Value</Default>
+    </Action> Trim("%XIPGateway%")-->
+
+    <Action Type="Switch" OnValue='Trim("%XIPGateway%")' DontEval="False" Variable="TimeZone">
+      <Case RegEx="10\.0\.50\.1">Pacific Standard Time</Case>
+      <Case RegEx="10\.127(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){2}">Central Standard Time</Case>
+      <Case RegEx="(\W|^)(10\.35\.10\.1|10\.35\.11\.1|10\.36\.10\.1|10\.36\.11\.1)(\W|$)">Romance Standard Time</Case>
+      <Default>Eastern Standard Time</Default>
+    </Action>
+      
+    <Action Type="Input" Name="SystemNameInput" Title="Information" ShowBack="True">
+      <TextInput Prompt="System Name" Hint="Please enter the desired name for this system." RegEx=".{3,15}" Variable="SystemName" Question="Name of this system" />
+      <InputInfo Color="#992233">Names must be between 3 and 15 characters long.</InputInfo>
+      <CheckBoxInput Variable="DomainJoin" Question="Should this system be domain joined?" CheckedValue="Yes" UncheckedValue="No"/>
+    </Action>
+
+    <Action Type="TSVar" Variable="olist">"DCSS,Probation Adult and Juvenile,Agriculture Department,ComDev,County Counsel,Tax Collector,Parks &amp; Open Space,Cultural Services,DA,Elections,Public Defender,Fire,Auditor,MCHHS,Human Resources,IST,Assessor,Library Administration,County Administrators Office,Public Administrator,DPW,Retirement,Board of Supervisors"</Action>
+    <Action Type="TSVar" Variable="alist">DCSS,PROB,AG,CDA,CC,DF,POS,CU,DA,ELE,PD,FIRE,DF,MCHHS,HR,IST,ARC,LIB,CAO,PA,DPW,RET,BOS</Action>
+
+    <Action Type="Input" Name="OUChoice" Title="AD Organizational Unit">
+      <ChoiceInput Variable="OUChoice" AlternateVariable="SystemPrefix" Sort="False" Question="Please choose an AD OU for this system" Required="True" AutoComplete="True">
+        <ChoiceList OptionList="%olist%" AlternateValueList="%alist%" />
+      </ChoiceInput>
+    </Action>
+    
+	  <Action Type="Info" Name="FinalInfo" Title="Summary" Image="http://home.configmgrftw.com/images/CTGlobal.png" ShowCancel="True" ShowBack="True" >
+        <![CDATA[<b>System name:</b>  %SystemName%<br><b>OU:</b>  %OUChoice%]]>
+    </Action>
+	
+	  <Action Type="TSVar" Name="OSDComputerName" DontEval="True">%SystemName%</Action>
+	
+  </Actions>
+</UIpp>

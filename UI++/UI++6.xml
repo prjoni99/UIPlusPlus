@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="UI++" Icon="UI++2.ico" Font="Atlanta" DialogSidebar="True" Flat="False" AlwaysOnTop="False" Color="22AA22" >
+    <Software>
+        <Application Id="59426C81-2638-47AF-82A7-AFEA795B47B7" Label="Adobe Reader XI" Name="Adobe Reader XI"/>
+        <Application Id="D30B903C-95ED-4AC9-8256-EFADD02FAFF3" Label="Notepad++ v6.6.8" Name="Notepad++ v6.6.8" />
+        <Package Id="9EBF5537-6A81-4651-86D4-4E51C8899F4D" Label=".NET Framework 4.5.2" PkgID="ONE000100" ProgramName="Install .Net 4.5.2" />
+        <Package Id="E6677316-BA46-4553-A8B8-0818875DFADB" Label="Internet Explorer 11" PkgID="ONE000101" ProgramName="Install IE11" />
+        <Application Id="7D2F6F33-38DA-404C-9E10-1A3845BE0270" Label="Royal TS V2" Name="Royal TS V2" />
+        <Application Id="9E30C625-9B5D-480D-AA55-6055F713AE29" Label="Microsoft Office 2013" Name="Microsoft Office 2013" />
+    </Software>
+	<Messages>
+		<Message Id="COMPUTEREXISTSWARNING">Sigh ... a computer with this name already exists. Please try again.</Message>
+		<Message Id="COMPUTEREXISTS">Not again ... a computer with this name already exists but you may continue.</Message>
+		<Message Id="AUTHENTICATING">Now authenticating user ...</Message>
+	</Messages>
+	<Actions>
+    <Action Type ="RandomString" Length="12" />
+	<!--<Action Type="FileRead" DeleteLine="True" Filename="C:\backup\backup.csv" Variable="BackupText"/>-->
+    <!-- <Action Type="InfoFullScreen" Image="http://home.configmgrftw.com/images/ElkwaterUnited.png">Glorious things are happening in the background.</Action> -->
+    <!-- Action Type="UserAuth" Title="User Authentication" Domain="elkunited.com" MaxRetryCount="5"/>-->
+    <!--<ActionGroup Name="Preflight">
+    <Action Type="DefaultValues" ValueTypes="Asset,VM,OS,Network" ShowProgress="True" />
+
+    <Action Type="Preflight" Title="Preflight checks" ShowOnFailureOnly="False" ShowCancel="True" Timeout="600" TimeoutAction="ContinueOnWarning" >
+        <Check Text="WLAN Disconnected" Description="To prevent issues during deployment, a wired connection is required." ErrorDescription="Please disconnect the wireless network from this system." CheckCondition='"%XWLANDisconnected%" = "True"' />
+        <Check Text="Not on battery" ErrorDescription="Please ensure that the system is connected to AC Power." CheckCondition='"%XOnBattery%" = "False"' />
+        <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% < 1024' WarnCondition='%XHWMemory% > 4096' ErrorDescription="Please ensure that the system has at least 1 GB of memory." WarnDescription="For best results, this system should have at least 4 GB of memory"/>
+        <Check Text="UEFI Enabled" WarnCondition='"%XSystemUEFI%" = "True"' WarnDescription="For security purposes, UEFI should be enabled."/>
+    </Action>
+    </ActionGroup>-->
+    <Action Type="WMIRead" Variable="ComputerName" Namespace="root\cimv2" Class="Win32_ComputerSystem" Property="Name"/>
+    <Action Type="WMIRead" Variable="CurrentTier" Namespace="root\ITLocal" Class="Local_Config" Property="Tier"/>
+    <Action Type="RegRead" Hive="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion" Value="CurrentVersion" Variable="CurrentVersion" />
+	<Action Type="TSVar" Name="ATest-Variable">1234</Action>
+    <Action Type="Info" Name="myInfo" Title='Welcome' CenterTitle="False" Image="http://home.configmgrftw.com/images/ElkwaterUnited.png" Condition='"%ATest-Variable%" = "1234"'>
+      <![CDATA[Velkommen – Welkom - Tere tulemast – Bienvenue – Willkommen – Bienvenido – Välkommen]]>
+    </Action>
+
+	<!--<Action Type="ErrorInfo" Name="myInfo" Title='Doh!' Image="http://home.configmgrftw.com/images/ElkwaterUnited.png" ShowCancel="False">
+		<![CDATA[Something went wrong]]>
+	</Action>-->
+	<!--<Action Type="Input" Name="myInput" Title="User Input Time">
+      <ChoiceInput Variable="Tier" AlternateVariable="TierB" Question="Please enter the tier for this system" Required="True" Default="%CurrentTier%">
+        <Choice Option="0" Value="0" AlternateValue="A"/>
+        <Choice Option="1" Value="1" AlternateValue="B" />
+        <Choice Option="2" Value="2" AlternateValue="C" />
+        <Choice Option="3" Value="3" AlternateValue="D"  Condition='"%XAuthenticatedUser%" = "Jason"'/>
+        <Choice Option="4" Value="4" AlternateValue="E" />
+      </ChoiceInput>
+    </Action>-->
+    <Action Type="AppTree" Title="Please choose your software">
+      <SoftwareSets>
+        <Set Name="Default">
+          <SoftwareGroup Id="952025F7-BC5D-4D1C-960C-002B77323479" Label="Group A">
+            <SoftwareGroup Id="07827D9D-8B57-444E-AC86-08D6DF527DC9" Label="Group B">
+              <SoftwareRef Id="59426C81-2638-47AF-82A7-AFEA795B47B7" />
+              <SoftwareRef Id="E6677316-BA46-4553-A8B8-0818875DFADB" />
+            </SoftwareGroup>
+            <SoftwareRef Id="7D2F6F33-38DA-404C-9E10-1A3845BE0270" />
+            <SoftwareRef Id="9E30C625-9B5D-480D-AA55-6055F713AE29" />
+          </SoftwareGroup>
+          <SoftwareRef Id="D30B903C-95ED-4AC9-8256-EFADD02FAFF3" />
+          <SoftwareGroup Id="71354335-19C7-4E12-A3D4-1B48EC91E7B4" Label="Group C">
+            <SoftwareRef Id="9EBF5537-6A81-4651-86D4-4E51C8899F4D" />
+          </SoftwareGroup>
+        </Set>
+      </SoftwareSets>
+    </Action>
+	<Action Type="Input" Name="myInput" Title="Information" ShowBack="True">
+		<InputText Prompt="Primary Administrator" Hint="Enter the name of primary administrator for this system" RegEx=".*" Variable="PrimaryAdmin" Question="Primary administrator for this system" />
+		<!-- <InputInfo NumberofLines="2" Color="#882222">0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789</InputInfo> -->
+		<InputText Prompt="Primary Application or Role" Hint="Enter the name of the primary application on or role for this system" RegEx=".*" Variable="PrimaryApp" Default="Let it be" Question="Primary application or role for this system" Required="False"/>
+	    <!-- <InputText Prompt="System Name" Hint="Enter the name for this system" RegEx=".*" Variable="SystemName" Question="System Name" Required="True" ADValidate="True"/> -->
+		<InputCheckBox Variable="DomainJoin" Question="Should this system be domain joined?" CheckedValue="Yes" UncheckedValue="No"/>
+	</Action>
+    <Action Type="TSVar" Name="TestVariable"><![CDATA[Left("%XAuthenticatedUserDomain%",2) & Left("%XAuthenticatedUser%",2)]]></Action>
+    <Action Type="WMIWrite" Namespace="root\ITLocal" Class="Local_Config" >
+      <Property Name="ComputerName" Type="CIM_STRING" Value="%ComputerName%" Key="True"/>
+      <Property Name="Tier" Type="CIM_UINT8" Value="%Tier%" Key="False"/>
+    </Action>
+    <Action Type="RegWrite" Hive="HKLM" Key="Software\ConfigMgrFTW" Value="%XAuthenticatedUserDomain%" ValueType="REG_SZ">%XAuthenticatedUser%</Action> -->
+  </Actions>
+</UIpp>
+
+

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="Coretech" Icon="xyz.ico" Color="#2233DD" DialogIcons="False">
+  <Actions>
+  
+  <Action Type="Info" Name="Introduction" Title="Summary" Image="http://home.configmgrftw.com/images/CTGlobal.png" ShowCancel="True" >
+      <![CDATA[Welcome]]>
+  </Action>
+    
+  <Action Type="DefaultValues" ValueTypes="All" ShowProgress="True" />
+    
+    <Action Type="Preflight" Title="Preflight checks" ShowOnFailureOnly="True" ShowBack="True">
+      <Check Text="WLAN Disconnected" CheckCondition='"%XWLANDisconnected%" = "True"' />
+      <Check Text="Not on battery" CheckCondition='"%XOnBattery%" = "False"' />
+      <Check Text="Minimum memory > 1GB" CheckCondition='%XHWMemory% >= 1024' />
+      <Check Text="CPU Supports Windows 8+" CheckCondition='%XCPUPAE% AND %XCPUNX% AND %XCPUSSE2% = True' />
+    </Action>
+
+  <Action Type="TSVar" Variable="SystemNameSuffix">CTG</Action>
+      
+  <Action Type="Input" Name="myInput" Title="Information">
+    <TextInput Prompt="System Name" Hint="Please enter the name for this system with a suffix of %SystemNameSuffix%" RegEx=".{3,5}%SystemNameSuffix%" Variable="SystemName" Question="Name of this system" />
+    <TextInput Prompt="Primary User" Hint="Please enter the name of the primary user of this system" RegEx=".{3,15}" Variable="PrimaryUser" Question="Primary system user" Required="False"/>
+    <CheckboxInput Prompt="Executive" Variable="IsExecutiveSystem" Question="Is this system for an executive?" Default="False"/>
+  </Action>
+      
+  <Action Type="Input" Name="OUChoice" Title="AD Organizational Unit">
+    <ChoiceInput Variable="OUChoice" AlternateVariable="SystemPrefix" Question="Please choose an AD OU for this system" Required="False" AutoComplete="False">
+      <Choice Option="Agriculture Department" AlternateValue="AG"/>
+      <Choice Option="Assessor" AlternateValue="ARC"/>
+      <Choice Option="Auditor" AlternateValue="DF"/>
+      <Choice Option="Board of Supervisors" AlternateValue="BOS" />
+      <Choice Option="ComDev" AlternateValue="CDA" />
+      <Choice Option="County Administrators Office" AlternateValue="CAO" />
+      <Choice Option="County Counsel" AlternateValue="CC" />
+      <Choice Option="Cultural Services" AlternateValue="CU"/>
+      <Choice Option="DA" AlternateValue="DA" />
+      <Choice Option="DCSS" AlternateValue="DCSS" />
+      <Choice Option="DPW" AlternateValue="DPW" />
+      <Choice Option="Elections" AlternateValue="ELEC" />
+      <Choice Option="Fire" AlternateValue="FIRE" />
+      <Choice Option="HHS" AlternateValue="MCHHS" />
+      <Choice Option="Human Resources" AlternateValue="HR" />
+      <Choice Option="IST" AlternateValue="IST" />
+      <Choice Option="Library Administration" AlternateValue="LIB" />
+      <Choice Option="Parks &amp; Open Space" AlternateValue="POS" />
+      <Choice Option="Probation – Adult and Juvenile" AlternateValue="PROB" />
+      <Choice Option="Public Administrator" AlternateValue="PA" />
+      <Choice Option="Public Defender" AlternateValue="PD" />
+      <Choice Option="Retirement" AlternateValue="RET" />
+      <Choice Option="Tax Collector" AlternateValue="DF" />
+    </ChoiceInput>
+  </Action>
+      
+	<Action Type="Info" Name="FinalInfo" Title="Summary" Image="http://home.configmgrftw.com/images/CTGlobal.png" ShowCancel="True" ShowBack="True" >
+      <![CDATA[<b>System name:</b>  %SystemName%<br><b>OU:</b>  %OUChoice%]]>
+  </Action>
+	
+	<Action Type="TSVar" Name="OSDComputerName" DontEval="True">%SystemName%</Action>
+	
+  </Actions>
+</UIpp>

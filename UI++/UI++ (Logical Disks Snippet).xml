@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIpp Title="" Icon="UI++2.ico" AlwaysOnTop="False" Flat="False" DialogSidebar="False" >
+<Actions>
+  <Action Type="ExternalCall" Title="Get Logical Disks">cscript.exe //NOLOGO //B Get-LogicalDisks.vbs</Action>
+  <Action Type="Input" Name="VolumeChoice" Title="Volume Choice">
+    <ChoiceInput Variable="VolumeChoice" Sort="False" Question="Please choose the volume to install Windows on" Default="C:" Required="True" AutoComplete="False">
+      <ChoiceList OptionList="%VolumeInfo%" ValueList="%VolumeLetters%" />
+    </ChoiceInput>
+  </Action>
+  <Action Type="TSVar" Name="OSDTargetSystemDrive">"%VolumeChoice%"</Action>
+</Actions>
+</UIpp>
